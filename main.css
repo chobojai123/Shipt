@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  background: #34495e;
+}
+
+h1 {
+  color: white;
+}
+
+.message {
+  position: absolute;
+  color: #2ecc71;
+  left: 42%;
+  top: 3%;
+  margin: 0;
+}
+
+#p1, #p2 {
+  position: relative; 
+  text-align: center;
+}
+
+.diagonalPlacement {
+  width: 50%; 
+  float: left;
+}
+
+.verticalPlacement {
+  width: 55%; 
+  float: left; 
+  margin-left: -25px;
+}
+
+#left {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+  float: left;
+}
+
+#right {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+  float: left;
+}
+
+.container {
+  position: relative;
+  width: 500px;
+}
+
+.board {
+  position: relative;
+  margin: 10px auto 0 auto;
+  width: 500px;
+  height: 500px;
+  border: 5px solid white;
+  background-color: #0077be;
+}
+
+.board > div {
+  position: relative;
+  display: block;
+  float: left;
+  border: 1px solid #333;
+}
+
+.board > div::after,
+.board > div::before,
+div.ship::before {
+  position: absolute;
+  display: none;
+  border-radius: 50%;
+  content: "";
+  z-index: 3;
+}
+
+div.ship::before,
+div.place-ship:hover::before {
+  display: block;
+  z-index: 2;
+  cursor: pointer;
+  height: 50%;
+  left: 10%;
+  top: 25%;
+}
+
+div.ship2::before {
+  width: 180%;
+  background: #455A64;   
+  content: "Destroyer";
+  text-align: center;
+  color: white;
+}
+
+div.ship2.vertical::before {
+  position: absolute;
+  left: -40%;
+  top: 80%;
+}
+
+div.ship3::before {
+  width: 280%;
+  content: "Cruiser";
+  text-align: center;
+  color: white; 
+  background: #455A64; 
+}
+
+div.ship3.vertical::before {
+  left: -90%;
+  top: 130%;
+}
+
+div.ship3v3::before {
+  width: 280%;
+  content: "Submarine";
+  text-align: center;
+  color: white;
+  background: #455A64;
+}
+
+div.ship3v3.vertical::before {
+  left: -90%;
+  top: 130%;
+}
+
+div.ship4::before {
+  width: 380%;
+  content: "Battleship";
+  text-align: center;
+  color: white;
+  background: #455A64; 
+}
+
+div.ship4.vertical::before {
+  left: -145%; 
+  top: 180%;
+}
+
+div.ship5::before {
+  width: 480%;
+  content: "Aircraft Carrier";
+  text-align: center;
+  color: white;
+  background:  #455A64; 
+}
+
+div.ship5.vertical::before {
+  left: -190%;
+  top: 230%;
+}
+
+div.ship.vertical::before,
+div.place-ship.vertical::before {
+  transform: rotate(90deg);
+}
+
+.ship-container {
+  position: relative;
+  width: 100%;
+}
+
+.ship-placeholder {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  top: 20px;
+}
+
+.ship-placeholder.vertical {
+  float: left;
+  top: 0px;
+  margin-top: 0px;
+}
+
+button {
+  position: absolute;
+  height: 40px;
+  width: 100px;
+  left: 40%;
+  top: 20px;
+  border: none;
+  background: #1aa3ff;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+button.hidden {
+  display: none;
+} 
+
+button#reset {
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: 0;
+  color: white;
+  background: red;
+  margin: 0;
+}
